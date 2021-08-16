@@ -1,0 +1,30 @@
+Strings- Collection of characters and String is a class:
+
+There are 2 types of Strings:
+1. String Literals
+syntax:
+
+str a='Rahul' (This will also be converted to Str a = new Str() in the backend by java but this is more easy to use , Also when say another str is created with syntax str b='Rahul'-- Then since both the Strings are same-Java will not create another ref of b it will point the reference of a-- This is used more likely in Java)
+
+2. By object creation:
+syntax-
+
+str a= new str('Sharma') [As discussed above, This follows the standard format of creating a string & even if a new str with same value is created still new reference will be created in this case- This is less likely being used in Java]
+
+
+String methods:
+str.charAt(index)
+str.indexof(char)
+str.split(char)= This will split the string in 2 parts  & you can store in array & then print it or use it as per the indexing
+
+str.substring(startIndex,EndIndex)
+str.substring(startIndex) [From that index to the last]
+str.conact(strtobe added) [This will join 2 strings]
+str.toUpperCase()
+str.toLowerCase()
+str.replace(char_tobreplaced, char_tobereplaced_wtih)
+
+:String Buffer and Builder- used for string manupulation
+String Buffer is thread safe, less efficiemt
+String Builder is not thread safe, more efficient
+

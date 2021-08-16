@@ -1,0 +1,15 @@
+::Abstraction
+
+:When the class has both the methods i.e: implemented/non implemented then we can say that we are having abstraction where the unimplemented method is abstract method & class is also called Abstraction class
+
+:There is partial abstraction acheived in abstraction as compared to 100% achieved in Interface
+
+:abstract keyword is used with method/class
+
+:Use inheritance concept to extend the absctract class
+
+:You cannot create object for a class which is marked as abstarct class
+
+:private is not allowed to be used as access modifier for a method (public/protected is allowed- Not sure of the default type)
+
+:same for variables as above as well

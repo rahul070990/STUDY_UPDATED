@@ -1,0 +1,34 @@
+Dynamic JSON payload-
+
+-Requirement is because if same payload is sent/which is configured once will give error as the record might be created already /deleted as the same payload will be used so use dynamic payload so whatever you provide should replace and dynamically you can run the test
+
+-To come over this just where you created the method for your payload in separate java class make that with arguments with variables as String and just pass those in payload)
+-In the main test .body(payload.method_name(pass your agruments here))- So, In this case those arguments will go and sit in the method and you can make it as dynamic
+
+Parameterize the API Test-
+-Combination/multiple set of data needs to be passed as part of your test for your keys so in that case you can solve it using Data Provider
+
+-Annotation: @DataProvider
+Create object array inside a method & insert your data and just call that method in your test and you task is done
+
+@DataProvider(name='name_dataP')
+public Object dp(){
+return new object[][] {{},{},{}}
+}
+-USe this in your @Test annotion and you are done
+-Make sure mention argumemts in method and same should be sent to body argument as well and all the connections has been made successfully
+
+-How to send static json payload
+:If you have a json -you can just provide the path and the same static json will be used for your test/you can also do it by creating diff java class where we can return and use it but if you have it already then you should provide the path of the file
+
+
+-Method
+
+: public static String GenerateStringFromResource(String Path) throws IO Exception{
+return new String(Files.readAllBytes(Paths.get(path)));
+}
+
+: just use this method in .body
+
+
+

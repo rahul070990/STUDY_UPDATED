@@ -1,0 +1,41 @@
+:Building POJO class is common whether it is for serialization or deserialization
+:Set variables as private mostly and methods of getters and setters as public
+:Alt+Shift+S - Select all variable and press this and you will get option for generate getters and setters and then it will be generate all the methods automatically
+
+:package pojo [This needs to be imported to implement pojo class]
+
+:If your json has nested json then just create a different POJO class for that nested array json and in the main class change the return type to class(new mini json class) where you declare the variable and getters setters methods as well - In this way you can integrate the mini json into main json
+
+------------------------------------------------------
+
+:If you have array of json then just take only one json which will have same key values 
+:Take that and create class for one array element with variables and getters setters
+:So just like this create for all the array elements as well as just only the class name will vary else variables and all will be the same
+:So now the parent of these arrays will have these classes which were declared as Strings initially but since they are not so there return type will change to class_name level just like how this parent is treated in the beginning in the main class
+:But these childs now are arrays and you need to specify as List<> in the parent courses_example which will be dynamic and can be handelled correctly
+
+
+Json Example taken is something like this:
+{
+title: XXXX,
+Class_No:XXXX,
+Enrollment: XXXX,
+Courses:{
+first_name:[
+{
+course_Title:XXX,
+price:XXX
+}],
+
+second_name:[{
+course_Title:XXX,
+price:XXX
+}],
+
+
+second_name:[{
+course_Title:XXX,
+price:XXX
+}]
+}
+

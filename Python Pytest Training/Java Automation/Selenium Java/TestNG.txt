@@ -1,0 +1,78 @@
+:TestNG
+
+-TestNG can act as a java compiler just like java compiler so you can create class without main java method but for that you need to download TestNG plugin from Eclipse Market
+
+-Write a normal method & write @Test on top of method & hover over it to import the package which will mark it as Test case by TestNG
+
+-When you will run as 'It will show you Run as TestNG'
+
+:XML File
+
+-Right click on project & click testng>create testng xml file will be created to which we have heirrachy as : suite/test/classes/class/test/suite
+-Suite is like the main package(Top heirrachy) & test is like module/folder: inside that you will have test cases/classes
+
+:prioritizing Tests
+-Just add/remove test cases within the test /import the classes & then run it as per requirement or you can also add another separate test folder & import the classes and run
+-You can pass the priority in the argument which is like zero is first & -ve values are also taken & they have priority as per series from -ve to +ve) & so the test cases will run as per the priority assigned
+
+:Exclude/Include method
+-Go inside that class & include a tag with 'methods' & under that <exclude/include name='method_name'/>
+
+:Regex (matching partial text)- You can use with include/exclude with giving in either include/excluse with 'Text.*' (and all the test cases starting with such text will not be executed/included in your execution as per exclude/include)
+
+:Package level execution
+-testng xml should be created within th package level
+-Add tag <packages>/package name='name_of package'
+So all the test cases will run
+
+:Annotations
+-Before Suite (Highest Heirrachy- Generally for global environment configuration- url & all to check before doing anything)
+-Before Class
+-Before Test (always before a method e: browser invokation)
+-Before Method (always before a method- May be to clean the cookies and cache)
+-After Method  (always after a method)
+-After Test (always aftera method e: browser close)
+-After Class
+-After Suite (Lowest Heirrachy)
+
+:Groups
+-Simply pass in the argument with name like @Test(groups={'smoke'})
+-You should create different testngxml as per your requirement set up something like regression/anyone else that you desire
+-Include all the classes which have tags
+-Insert a tag called <groups> & run under it & using include tage with name of smoke/regression add it & run it
+
+:DependsOn
+-If you want to make one test depening on other method then use 'dependsOnMethods={"Test_Method_Name"}
+-Multiple depends on can also be used
+-you can use enable=false which will automatically reject the execution of that test case
+-timeout=4000 (40sec): This will set time just like implicit wait
+
+:Parameters
+-If the values are to be used throughout the suite then declare after the suite, for a test then after test
+-Use parameter tag <parameter name='URL' value='URL_VALUE'/>
+-Now use @parameters({'URL'}) at top of @Test & passthe string str_name in method & use it accordingly
+
+:Parameterization for Test Method
+-Make a method with @dataprovider in the test case you need
+-Make multiple dimensional objct array
+-Object[][] data= new Object[2][3]
+fill the values for all metrics
+-and return the data object and now use the data provider method where you need
+-Pass in the argument of @Test- (dataProvider='name_of_dp')
+-Pass 2 arguments in method & use it in method accordingly
+
+
+:Listeners- It is an interface which is used in Java to implement on various methods like on onTestFailure,onTestSuccess,onTestStart etc.
+So use use majorly on TestFailure to take the screenshot of the failed test case
+-YOu need to pass the Listener tag in xml as well after suite
+<Listeners>
+<Listener class-name='name_of_class'/>
+<Listeners>
+	
+:Paraller Run
+-Write on suite level 'parallel='name' thread-count='2'
+-Or may be  you can also use it at class level
+
+
+
+

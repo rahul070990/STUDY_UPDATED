@@ -1,0 +1,21 @@
+:Constructor (Default constructor as it does not has any argument)
+
+-Whenever an object is created for a class- A block of code is executed which is Constructor- Even if you do not define any constructor it will be automatically called by java compiler
+
+--Constructor is used to initialize/assign the variables values
+Ex- Common example can be seen when we create POM (page objects) then to make a connection between main test case & page object we pass the instance of browser which will then form a connection
+
+--Constructor name is always same as Class Name & it does not have any return type
+
+syntax:
+
+public class Test(){
+
+public Test(){
+
+}
+
+}
+
+:Type of Constructor
+-Parameterized Constructor (Expects the arguments)

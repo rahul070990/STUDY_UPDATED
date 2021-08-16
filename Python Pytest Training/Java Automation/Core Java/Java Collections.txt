@@ -1,0 +1,52 @@
+:Java Collection Framework is a collection of interfaces and classes which helps in storing and processing the data efficiently
+
+:List, Set, Map they are part of Collections
+-List- List is an ordered collection, contains duplicate elements
+Types are ArrayList, LinkedList,Vector
+
+-This is same as list in python means mutuable
+-You can add values at specific index, remove elements,
+
+:ArrayList-
+
+ArrayList<String(data type)> a = new ArrayLits<String>;
+a.add(index,value)
+a.add(value)
+a.remove(index)
+a.size
+a.get(index)
+a.contains(value)
+a.indexof(value)
+a.isEmpty()
+
+
+:Set>>hashset-- 
+no duplicate values allowed
+elements not stored in sequential order
+
+-add, remove,isEmpty, size
+
+-iterator is used to iterate as set doesn't has the index concept so iterator acts as an index so iterator.next() is used to do the same so has iterator.hasnext() is used as checks whether next  index is available or not
+
+:Map>>hashMap (stored in key value pair)
+
+-object.put(key,value)
+-obj.get(key)
+-obj.remove(key)
+
+
+:HashMap VS HashTable
+-Hashtable is thread safe- Next operation of thread will be executed when first is completed/resolved whereas multiple programmes can access HashMap
+
+-HashMap allows NULL keys and values but not HashTable
+
+-Iterator in map while enumerator in HashTable
+
+
+
+
+
+
+
+
+

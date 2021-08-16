@@ -1,0 +1,11 @@
+:Serialization- Process of converting your java object into Request body(Payload)
+
+-Basically, You will be creating class and setting up getters and setters methods for your variables as per your Json and then you can simply use that class object into .body('object_name') and all your payload will be used like this which is nothing but Serialization and when opposite process happens , It is called Deserialization
+
+-All this is done using POJO classes
+
+-Setters plays role in serialization and getters in Deserialzation
+
+-External Libraries required: Jackson Databind maven, Jackson2, Gson (Only .jar file should be dowbloaded), jackson core and jackson annotations also need to be downloaded with the same version as inital jackson databind
+-Gson library .jar download- Prefer stable version
+-Add all the .jars in Java Build Path

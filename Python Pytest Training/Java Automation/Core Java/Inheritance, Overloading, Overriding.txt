@@ -1,0 +1,49 @@
+:Inheritance
+
+-When child class inherits all the methods/functions then you can use Inheritance concept using extends keyword
+-We use this concept a lot in Java to access the methods/functions in other class
+-In Framework example- Say whenever you create a base class like for browser invokation method that method is to be used by every test case so in that case we can simply inherit this parent class in our child class and child class can happily use the method/single line to invoke the browser
+
+:So in this way the code reusibility is also utilized and you can simply reuse the code which has already been written in parent class by simply extending the parent class into the child class
+
+:Types of Inheritance in Java-
+
+-Multiple Inheritance is not allowed in Java
+Class A(){
+code}
+
+Class B(){
+code}
+
+Class Z extends A,B{
+This is not allowed in Java- This is a multiple inheritance concept which is not allowed}
+
+-Multiple Inheritance can be acheived in Java with the help of Interface: Class A extends B implemets C,D [Since multiple inheritance can be acheived so in this way we can acheive multiple inheritance in java]
+
+
+
+:Overloading
+-Functional Overloading
+
+-Same method name can happen if the argument count should be different/argument data type should be different
+
+:Overriding
+-Say you have inherited a class which contains a method name A in parent class & you try to create same method name A with some say enhanced functionalities- In that case the child case will override the method A of parent class
+-Overriding - In the above case the preference is given to the child methods instead of parent method
+
+
+What can be overload?
+Static methods can be overloaded
+
+What cannot be overloaded?
+What can be overriden?
+-non static method can be overriden as static but it should not be private or final.
+
+What cannot be overriden?
+-private methods cannot be overriden
+-Static methods cannot be overriden
+-If a method cannot be inherited that cannot be overriden like when making class/method as final that cannot be overriden
+-Method declared as final cannot be overriden
+-Constructors cannot be overriden
+-A subclass in a different package can only override the non-final methods declared public or protected.
+--Constructors cannot be made final

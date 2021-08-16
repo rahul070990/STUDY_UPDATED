@@ -1,0 +1,11 @@
+:Base Class
+-In your base class - Instead of using prop.getProperty (instance created for accessing property file where you have defined bname & url) use System.getProperty(browser)and use that in the condition & in maven command you need to pass in commandline as 'mvn test -Dbrowser=chrome
+
+-On jenkins set your project to parametrize i to provide with key as 'browser' & values with chrome,firefox etc & write the maven command as 'test -Dbrowser="$browser"
+
+:Coding Standards to achieve Encapsulation
+-Make your variables as private as methods as public in that way we are not exposing our variables as public and we can access everything from method so in that way we have used encapsulation
+
+:Chrome Options
+-Add as chrome options and options.addargument("headless") and there are so many other arguments & you add them in arguments & finally send chromeoption in argument of driver & all the options will be executed
+

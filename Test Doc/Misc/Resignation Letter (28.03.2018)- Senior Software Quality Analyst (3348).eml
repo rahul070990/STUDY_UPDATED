@@ -1,0 +1,166 @@
+Delivered-To: r.rrahulsept07@gmail.com
+Received: by 10.28.0.210 with SMTP id 201csp1463896wma;
+        Thu, 29 Mar 2018 01:30:16 -0700 (PDT)
+X-Received: by 2002:a24:b541:: with SMTP id j1-v6mr6901218iti.128.1522312216144;
+        Thu, 29 Mar 2018 01:30:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1522312216; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WJAWV4swNQ5pcM2XG23c0w375VZx7GNcuwi2dIabcjFdTBBVnutX0IZl0VTPulFcDe
+         cI9bejFc0hoRULmOmTc7j88aQ1NG1nvrgRmOd5osezPLBoBHroQqvHuDw3XU6ESJAPUi
+         goODW4CXRWCJ3wLEDT/e3gu6B+4l1AIv67pHa2EmgYjryNK6BizkphITc/lK9L5g7tD8
+         2WbJ7pCI/c17c5hGxWHyBJti/RYH10xSNGYcL48i/9p/M7HbxLz29i5PeuM+oZcLMQNz
+         sZEzyYEe6Uno36YY2997fN35FdWBQpjPBpx1hxy2D2WnB6AQ43aMi9MnINU9tzgdqn8V
+         7SKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:references:in-reply-to:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=zAjwNyP4TGw51/9GevvI7S3ytwL0W6+V2vUfS5rrXK4=;
+        b=miIa8PGETvy3QhSFPfl1NIJvOFfmdMWeqbJVyNtriu0rsEIJzxlGaf11R+GfNnWWmP
+         o4E9Rn1ehGIGilwvbT3Qh17lmhyu1vEn9nMdTFkuEEt7P7tpSTv89Xs/NAypFoYBTnxw
+         S1p5Xnth9ZEnHjDiKIkus210JAg92iYMWaIzFDRWqxUF8ig+b0EvTgnZHj4c06z2rbF5
+         Kvt0Fc9O0lR/Zg4iLmu6L3jtooQVhdZiPAIMr0IL2W+G9SxfrEEHlwrcqVIV3txNfZWl
+         C9kH1ns41BgMA4FFdyZ/CbjfUNBNxbf6cAXSOSelNPDxYAZ41bUC05N9/Y8IKlcIdBv9
+         qBug==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@kelltontech.com header.s=google header.b=T13WQhZQ;
+       spf=pass (google.com: domain of rahul.sharma1@kelltontech.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rahul.sharma1@kelltontech.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kelltontech.com
+Return-Path: <rahul.sharma1@kelltontech.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id k68-v6sor688954itc.129.2018.03.29.01.30.15
+        for <r.rrahulsept07@gmail.com>
+        (Google Transport Security);
+        Thu, 29 Mar 2018 01:30:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of rahul.sharma1@kelltontech.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@kelltontech.com header.s=google header.b=T13WQhZQ;
+       spf=pass (google.com: domain of rahul.sharma1@kelltontech.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rahul.sharma1@kelltontech.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kelltontech.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=kelltontech.com; s=google;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=zAjwNyP4TGw51/9GevvI7S3ytwL0W6+V2vUfS5rrXK4=;
+        b=T13WQhZQTbazmgkvlLEx14fBJ5wse9uig/5CkYH/U9HJq0+8D5MTT47vqXY23tM5Pv
+         xI8EbCdK/1AjxTLALwIGXsebnmanTXb5uKM5/aIV5yywz7iBavD7rRWx4yuLNef9dqHN
+         Ub4L8G7MZmsVnCgbCmpBM4cesdE/YOPBWQCEedptoz2A4wfqOckm4r453GikavGXPROo
+         8h1/H1g+G1N40qGwZhY0FAdSNx8IvDLrHONr/0J068n742kYtoKHPyz8TqnYqOhBK5tL
+         TdKumZYXPGfGhE+cGbYLHkwXjnr3cyqSogCIiWIbfgPn/RwhUtgVewMpmLvCDhZWa9Jr
+         hDwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=zAjwNyP4TGw51/9GevvI7S3ytwL0W6+V2vUfS5rrXK4=;
+        b=en9IZsQEzD/AoBvQaVyBNDJq64WNAeAEn980nXceeArV1gonCa2llSv5eu4/L3jLfj
+         7IIxxLTAxvQru8R2urv/njkIbffLjHNdaiBc3tzAH2Y1rUS0aQ9f3cnevVhgFYnFhPoH
+         lLHH1ftDddhVC17ASp23CijZLZ+ASZnKPjHATz9El1uuNh3Zvq0cMm8Mbp5mL4aepjzo
+         XOLpKzKde6GzhKVWvVrZG64HlgLS+dpi8IwCZW+K3zVKIsUC1MlVYdM+LTHqcxIQ0Yj5
+         gDerLbMtfGMPW1BMHQTFRHNabt0v7AtC9GrFprqmuNa3sKXF762geqMlZN/QY2UdwhiC
+         wX7w==
+X-Gm-Message-State: AElRT7FIE4ewDuDv8neCyMOxEwNQ2oimnwM00g/aL2wFii0YpnYVoHrd
+	AU4p35ngagd3ZTwr4pqfDMgrNsaKFYuixf9uRP4yoQ==
+X-Google-Smtp-Source: AIpwx49PBWOF3GpM2IPjTW9XNbCefo/fGdrmfNryRWUjVuIMU9OJSGwxYaCRau0gsVQCK/85pZyISHPryhZ/+yGMAb8=
+X-Received: by 2002:a24:6c4a:: with SMTP id w71-v6mr6803606itb.87.1522312215560;
+ Thu, 29 Mar 2018 01:30:15 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.2.10.195 with HTTP; Thu, 29 Mar 2018 01:30:15 -0700 (PDT)
+In-Reply-To: <CAN-vyPoZ4-O0iByneGf+7FD59rSUj9HbXMrSWGEULU=9JaUPTw@mail.gmail.com>
+References: <CAN-vyPoZ4-O0iByneGf+7FD59rSUj9HbXMrSWGEULU=9JaUPTw@mail.gmail.com>
+From: Rahul Sharma <rahul.sharma1@kelltontech.com>
+Date: Thu, 29 Mar 2018 14:00:15 +0530
+Message-ID: <CAN-vyPq_bs0j0N20fY+T05pRPnSuoLnM8eV-74MTgrz46vc9vw@mail.gmail.com>
+Subject: Fwd: Resignation Letter (28.03.2018)- Senior Software Quality Analyst (3348)
+To: Rahul Sharma <r.rrahulsept07@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000d89bc2056888ee0f"
+
+--000000000000d89bc2056888ee0f
+Content-Type: text/plain; charset="UTF-8"
+
+---------- Forwarded message ----------
+From: Rahul Sharma <rahul.sharma1@kelltontech.com>
+Date: Wed, Mar 28, 2018 at 3:58 PM
+Subject: Resignation Letter (28.03.2018)- Senior Software Quality Analyst
+(3348)
+To: Vikas Garg <vikas.garg1@kelltontech.com>
+Cc: Sanjay Kaushik <sanjay.kaushik@kelltontech.com>, Abhishek Tripathi <
+abhishek.tripathi@kelltontech.com>, Megha Thakur <
+megha.thakur@kelltontech.com>, Amit Yadav <amit.yadav@kelltontech.com>
+
+
+Hi Vikas,
+
+This is to inform you that, I shall not be able to continue my services at
+Kelltontech Solutions due to some personal reasons. Thereby, I submit my
+resignation for your kind acceptance. My resignation will be effective from
+today (March 28, 2018). I hope you will relieve me from the
+responsibilities of my current assignment as early as possible.
+
+With due regards, I shall like to mention that I am whole-heartedly
+thankful for your and Kelltontech's full co-operation and all the
+encouragement given during my stay.
+
+Hoping for your acceptance of my request.
+
+Thanks and Regards,
+
+Rahul Sharma
+(Emp Code: 3348)
+
+--000000000000d89bc2056888ee0f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><div class=3D"gmail_quote">---------- Forwarded messag=
+e ----------<br>From: <b class=3D"gmail_sendername">Rahul Sharma</b> <span =
+dir=3D"ltr">&lt;<a href=3D"mailto:rahul.sharma1@kelltontech.com">rahul.shar=
+ma1@kelltontech.com</a>&gt;</span><br>Date: Wed, Mar 28, 2018 at 3:58 PM<br=
+>Subject: Resignation Letter (28.03.2018)- Senior Software Quality Analyst =
+(3348)<br>To: Vikas Garg &lt;<a href=3D"mailto:vikas.garg1@kelltontech.com"=
+>vikas.garg1@kelltontech.com</a>&gt;<br>Cc: Sanjay Kaushik &lt;<a href=3D"m=
+ailto:sanjay.kaushik@kelltontech.com">sanjay.kaushik@kelltontech.com</a>&gt=
+;, Abhishek Tripathi &lt;<a href=3D"mailto:abhishek.tripathi@kelltontech.co=
+m">abhishek.tripathi@kelltontech.com</a>&gt;, Megha Thakur &lt;<a href=3D"m=
+ailto:megha.thakur@kelltontech.com">megha.thakur@kelltontech.com</a>&gt;, A=
+mit Yadav &lt;<a href=3D"mailto:amit.yadav@kelltontech.com">amit.yadav@kell=
+tontech.com</a>&gt;<br><br><br><div dir=3D"auto"><div dir=3D"ltr"><p style=
+=3D"color:rgb(34,34,34);font-family:arial,sans-serif;font-size:12.8px;font-=
+style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-we=
+ight:400;letter-spacing:normal;text-align:start;text-indent:0px;text-transf=
+orm:none;white-space:normal;word-spacing:0px;background-color:rgb(255,255,2=
+55);text-decoration-style:initial;text-decoration-color:initial">Hi Vikas,<=
+/p><p style=3D"color:rgb(34,34,34);font-family:arial,sans-serif;font-size:1=
+2.8px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:nor=
+mal;font-weight:400;letter-spacing:normal;text-align:start;text-indent:0px;=
+text-transform:none;white-space:normal;word-spacing:0px;background-color:rg=
+b(255,255,255);text-decoration-style:initial;text-decoration-color:initial"=
+>This is to inform you that, I shall not be able to continue my services at=
+ Kelltontech Solutions due to some personal reasons. Thereby, I submit my r=
+esignation for your kind acceptance. My resignation will be effective from =
+today (March 28, 2018). I hope you will relieve me from the responsibilitie=
+s of my current assignment as early as possible.</p><p style=3D"color:rgb(3=
+4,34,34);font-family:arial,sans-serif;font-size:12.8px;font-style:normal;fo=
+nt-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter=
+-spacing:normal;text-align:start;text-indent:0px;text-transform:none;white-=
+space:normal;word-spacing:0px;background-color:rgb(255,255,255);text-decora=
+tion-style:initial;text-decoration-color:initial">With due regards, I shall=
+ like to mention that I am whole-heartedly thankful for your and Kelltontec=
+h&#39;s full co-operation and all the encouragement given during my stay.</=
+p><p style=3D"color:rgb(34,34,34);font-family:arial,sans-serif;font-size:12=
+.8px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:norm=
+al;font-weight:400;letter-spacing:normal;text-align:start;text-indent:0px;t=
+ext-transform:none;white-space:normal;word-spacing:0px;background-color:rgb=
+(255,255,255);text-decoration-style:initial;text-decoration-color:initial">=
+Hoping for your acceptance of my request.=C2=A0</p><p style=3D"color:rgb(34=
+,34,34);font-family:arial,sans-serif;font-size:12.8px;font-style:normal;fon=
+t-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-=
+spacing:normal;text-align:start;text-indent:0px;text-transform:none;white-s=
+pace:normal;word-spacing:0px;background-color:rgb(255,255,255);text-decorat=
+ion-style:initial;text-decoration-color:initial">Thanks and=C2=A0Regards,</=
+p><p style=3D"color:rgb(34,34,34);font-family:arial,sans-serif;font-size:12=
+.8px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:norm=
+al;font-weight:400;letter-spacing:normal;text-align:start;text-indent:0px;t=
+ext-transform:none;white-space:normal;word-spacing:0px;background-color:rgb=
+(255,255,255);text-decoration-style:initial;text-decoration-color:initial">=
+Rahul Sharma<br>(Emp Code: 3348)</p><br></div></div></div><br></div>
+
+--000000000000d89bc2056888ee0f--

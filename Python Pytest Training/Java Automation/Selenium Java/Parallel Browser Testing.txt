@@ -1,0 +1,37 @@
+:Selenium RC server is responsible / can be used to run tests as cross browser testing or run in parallel
+-Main machine from where you trigger the test is called Hub & other machines on which you can run other testes are called nodes
+-You can run your tests in different browsers in them>Not to any specific
+
+:Configuration
+-Download Selenium RC standalone server
+-Go to path where it is downlaoded & hit cmd to open cmd on path
+
+-write java -jar name_ofjar.jar -role hub
+
+-Now login to the machine which you want to make as node & register with hub
+
+-download the same selenium rc server jar in node machine as well
+-invoke the jar as mentioned above 
+
+-----java -Dwebdriver.chrome.driver='path_of_driver'-jar jar_name.jar -role webdriver -hub ip_address_of_hub -port port_no_of_node
+
+-make sure to download & configure the java in node machine and set it at environment variable
+
+-make sure you download the browser driver in node & keep standalone server RC & browser driver in same path
+
+-java -Dwebdriver.chrome.driver='path_of_driver'-jar jar_name.jar -role webdriver -hub ip_address_of_hub -port port_no_of_node
+
+
+
+
+:Code for RC
+-Import selenium RC in external jar
+-Create class
+-code
+
+Desiredcapabilities dc= new Desiredcapabilities ();
+dc.setPlatform(Platform.Windows);
+dc.setBrowsername("chrome") [you can set other as well like version and all]
+
+Webdriver driver= new RemoteWebDriver(new URL=("hub_ip_url"),dc);
+

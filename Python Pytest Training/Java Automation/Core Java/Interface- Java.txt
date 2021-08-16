@@ -1,0 +1,23 @@
+:Interface- Interface is a concept in Java where only signatures are mentioned (method) and nothing can be written within the method at all.
+
+:Classes which will use Interface should implements Interface (should write body for the method mentioned in Interface)
+
+:implements keyoword is used to start implementing the methods of interface (WebDriver , Listener is an example of Interface)
+
+:Access modifier should be public for all methods/variables as these methods needs to be overriden in one class which is implementing interface else you cannot implement those methods if access modifier is private,protected,default
+
+:Variables must be public,static,final
+
+:You can also define your own other methods in class which is implementing the interface after overriding the methods of Interface
+
+:Concept of Run Time polymorphism:
+-The return type will have the access of all the methods within that & cannot access others
+
+-interclass itc= new class()
+itc.mthods only of interclass , cannot access of new class()
+
+-Run time polymorphism is also used when say client wants to view/access only the interface methods in which he is interested into
+
+:One class can implement multiple interfaces as well using comma
+
+: Interface achieves 100% abstraction

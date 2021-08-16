@@ -1,0 +1,43 @@
+Select * from report.useremailnotifictaionsetup
+-- Entry needs to be here first
+
+Stored Procedure: 0418:
+Program>report.MainOrderStatusNotification
+
+
+
+Test Data:
+159929468   - Case created with Agent A 
+
+
+987-899-8877Secondary phoneFax
+166-727-2827
+
+
+
+159929521- Agency Notofcation -Sandeep US
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;
+
+https://www.youtube.com/watch?v=oQfNYqz8pLs --- Accessing values
+
+https://github.com/rahul070990/Python-Pytest-Framework.git-- remote repo
+
+855cb535fc8d81523536f0c2373af2f17c21e5b7
+
+Rahul$1235353901ec27cd96e170cd2bfb585252c0509d65e- New
+
+
+
+
+
+
+git remote add origin https://qa.testing2107%40gmail.com:Rahul%24123%40github.com/rahul070990/PythonPytestTutorial.git
+
+
+
+git remote add origin git@github.com/rahul070990/PythonPytestTutorial.git
+
+
+ssh-keygen -t rsa -b 4096 -C "qa.testing2107@gmail.com"

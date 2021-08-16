@@ -1,0 +1,6 @@
+-How to extract & handle response?
+
+:Once you have successfully setup your POJO classes, You need to store the repomse in .as(Class) intead of String as we did earlier because we want to now direct our response like this(NameOfClass.class).
+:Also we need to tell that the response is in JSON form so for that you need to say in Given: .expect().defaultParser(Parser.JSON)
+:And you need to store that in classReturn Type and variable reference instead of String
+

@@ -1,0 +1,6 @@
+-This is generally for the scenario where your json input is static
+
+: To pass the file as path that needs to be read in byte format first and then you can handle the scenario
+: Use - Files.readAllBytes(Paths.get("File Path"))
+: With above code- You will see the data passing in byte format but to pass it in String- You need to say 'new String("Pass everything as mentioned in above statement")'
+

@@ -1,0 +1,52 @@
+:Screenshot Method in General
+
+File src =((TakesScreenshot)driver).getScreenshotAs(OutputType.File);
+
+FileUtils.copyfile(src, new file("Path_Of_Destination_Folder"));
+
+:Screenshot on failure (Make a method in general base class-Apache common IO- import this package if selenium version doesnt help with FileUtils)
+
+method_name(String testcasename, Webdriver driver);
+TakesScreenshot td=(TakesScreenshot) driver;
+File source= td.getSCreenshotAs(OutputTyple.file);
+String destination= System.getProperty("user.dir")+"\\"Testcasename"\+".png"
+FileUtils.copyFile(src, new file(destination));
+
+Listener method for failed methods
+
+WebDriver driver=null;
+String TestCName= results.getMethod().getMethodName();
+mathod_name_method written in base class(TestMName, driver) [This will surrond in try and catch]
+-Now will access the driver as a field for the class so that we can connect driver accordingly to listener & back to base class as well
+
+driver= (WebDriver---cast it this way)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance()); [This will also go into try n catch]
+
+-Just mention the listenere in xml file after suite and you are done
+
+
+:Extend Reporting
+-ExtendSparkReporter, ExtendReports are two method used for extend report creation where sparkreporter is used to config
+
+String path= System.getProperty("user.dir")+"\\reports"+"reports.html";
+
+ExtendSparkReporter sr= new ExtendSparkReporter (path);
+sr.config().seReportName("passs it");
+sr.config().seDocumentTitle("pass it");
+
+extent= new ExtenReports();
+extend.attachReported(reporter);
+extent.setSystemInfo("Tester","Rahul Sharma");
+
+
+-We should link the Extent Report utility with listener method of TestStart
+-Make the method as static with initializing the object as well as static
+-Call the method with class_name in listeners at class variable/global to be accessed in start method
+-use that in listener start method with global variable
+-Extent test= extent.createTest("result.getMethod().getMethodName()") [make this extent test also as global so that all can access]
+-flush extent in onFinish method in listener
+-On Testsuccess- Use test.log(Status.PASS, "Test Passed")
+
+-On Test Failure
+test.fail(result.throwable);
+
+

@@ -1,0 +1,23 @@
+-PathParameter
+
+:You can use given().pathParam("key","value")
+:YOu need to provide the path parameter key in .post as well in {} and then it will fall there- {} means path param & at run time RA will look for pathParam and when found in given it will take that
+
+-How to pass the authentication ?
+:You can do it in 2 ways
+1)First is store the complete response into a string and by using   JsonPath (pass the string as argument into that)
+ Using the reference of JsonPath you can store the specific key of  that respose and store into variable & finally pass the variable   as .header
+
+2) Use the concept of SessionFilter- It stores the session of the response & you can simply pass that in your given of the request & it will remember the session and similarly pass the same in subsequent request using same session filter
+
+SessionFilter session= new SessionFilter()
+How to use in given()- In given use it as .filter(session) and use the same in the subsequent request as well
+
+-This is how you handle session cookie concept when required
+
+
+:How to add an attachment
+-you should use .multipart("file", new File(path_of_file)) in your given part
+-For multipart your content type in Header will also change to multipart/form-data
+
+:To relax https validation use given().relaxedHTTPSValidation().

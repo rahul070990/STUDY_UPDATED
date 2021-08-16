@@ -1,0 +1,18 @@
+:WHat is OAuth2.0?
+-This is getting very famous in terms of Authorization and there is also 1.0 which is used less but it is there like twitter uses it.
+
+-Protocal which makes the APIs more secure with also multiple grant types (different ways of authorization flows)
+-Authorization code & Client credentials is widely used as these flows in many applications
+
+-Authorization code example: Just when during a signUp process, An application also suggest to signUp using facebook/SignUp -- This process uses the Authorization grant type of OAuth2.0
+
+-Backend Implementation
+:When you click sign with Google (unique url is generated with detail like client ID and all- client id is given to say bookmyshow as it registers with google)
+:Once user sign in then it validates teh client id and send backs the access token to be used for bookmyshow to retreive and capture the user profile details like name,email etc except password obviosuly)
+:Access token is stored in browser by app like bookmyshow and when final action of book ticket is done by user then all user profile info will be used matching the access token and when that is validated the complete action is done-- So getting access token is impo & validation of the same as well)
+
+-Access token
+:Just get code from first request
+:provide code & other stuff like client id,secret password etc &  get the access token
+:Just use the access token for your subsequent request
+

@@ -1,0 +1,6 @@
+:How to automate OAuth2.0?
+-You can just follow simple and standard approach to extract the response in a String and getting the attribute stored in a variable which is to be passed in the subsequent request so in this way all the request parameters will get the values from teh previous responses variables
+
+-String breaking- You can use .split("attribute"-from where you will break in 2 parts)[index passing]- and pass the index of what is required from array and store it into a variable
+
+-If you need that your special symbols should not be formatted then just use .urlencodingenable("false")

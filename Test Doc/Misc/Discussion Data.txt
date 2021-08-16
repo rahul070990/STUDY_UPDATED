@@ -1,0 +1,62 @@
+------------------------
+Data for 11 Days
+OOO- 0.5 days
+Data for 10.5 days 
+
+
+US58170- Demo
+US58167- Demo
+US58143- Demo
+US58392- Demo- 7
+US60408- Demo- 3
+US60407- Demo- 4.5
+US58165- Demo 9
+US60557- Demo -4
+-----------------------
+
+US59421- 3 - In Testing
+US60555- 1.5- In Testing
+US56903- 2
+
+----------------------
+
+Pointers to be considered which played major Roles:
+
+-Gets Blocked sometimes due to buils issue- Latest example was shared recently yesterday. In Addition to this: 04th Feb was almost a loss day due to DE33002 (Getting blocked for most of the day)
+
+-Maximum User Stories came in Mid Jan
+
+-Project allocation issues- Attaching mail as well that my Project allocation was added/removed frequently with effort/time wasted in the same
+
+-Code freeze was done on 2/3- Which was suppose to freeze way before.
+
+
+
+
+
+
+
+US60554
+US58159
+US60556
+US56903
+US60556
+US59421
+US60555
+
+
+
+
+
+
+
+
+
+
+
+18660160-- female
+
+
+2/18----
+Order linked- 18660057-- 18659576
+

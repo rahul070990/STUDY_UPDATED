@@ -1,0 +1,37 @@
+:Access links in a page with control click action
+-Use keys.chord(Keys.Control,Keys.Enter)- save it in a variable and iterate through the //a tag (which is holding WebElements) and use send keys to hit the above saved variable which will open the links in a new tab
+
+:Switching to different Windows
+-Store the driver.getWindowHandles in a Set which will store all the windows in one set and then using iterator & .next() you can get the element accordingly (Initally the iterator is at the top which is not pointing to anything then .next() will move to first element-like this you can save the item in a variable & then switch accordingly)
+
+:Frames
+-driver.switch_to_frame(id)
+-driver.switch_to_default_content
+
+:Calendar handling general method
+-Find the generic path for month on the calendar
+-run while loop for desired month(!driver.findele.gettext.contains(month)){
+click the next arrow for the month}
+
+-So until desired month is achieved it will keep on moving to the next month
+-Once month find
+-Take the days in a list with a generic path & iterate through the list & simply put the condition to match the desired vs expected date & perform click
+-Desired date is selected
+
+
+:Accept certifications
+-DesiredCapabilities dc= new DesiredCapabilities .chrome();
+dc.setCapibility(CapibilityType.AcceptInsec Cert, true);
+dc.setCapibility(CapibilityType.AcceptSSL Cert, true);
+
+ChromeOptions c= new ChromeOptions();
+c.mrge(dc);
+-now parse c as argument in your webdriver & it will perfomr all such operations desired
+
+:Cookie 
+-you can delete cookie/all cookie/add cookie using driver.manage.use all such keyboards to perfomr cokoie related actions
+
+
+
+
+

@@ -1,0 +1,10 @@
+:Default
+
+-Deafult- same package
+
+-private- you cannot access methods/variables outside the class
+
+-public- access everywhere
+
+-protected- you can access in same packages + all child classes which inherites the parent class of protected declared method in other packages as well
+

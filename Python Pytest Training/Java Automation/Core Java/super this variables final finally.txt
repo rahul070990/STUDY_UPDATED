@@ -1,0 +1,95 @@
+:Super
+
+-Say child class inhertis parent class which has a variable name with NAME and same variable is available in child as well and if you normal call that variable /or may that variable/method in a method then the child class variable will be used/printed
+
+-Suppose if you need to use that parent class variable/method then  you need to use that with keyword super-- super.NAME in that case NAME variable of parent class will be called
+
+-If you want to use the constructor of parent class in sub class then it can also be used using 'super();' but it has to be the first line
+
+:This
+
+-This is used to refer the current object and this object scope lies in class level 
+
+-So when same variable is dislayed in class(global variable)/method level (local variable) and you want to call the global variable inside a method then you  need to use 'this' keyword as ties with the class level)
+
+
+
+:Instance/local/static(class) variable-
+
+-Instance & static(class) variables are defined at class level
+-class variable uses static keyboard whereas instance doesn't uses it
+-Whenever object to object a variable is changed those are instance variables as they are instance dependent
+-local variables are defined into the method & scope is only till that method only
+
+
+-If you want to use static variable in a method then just call that variable
+-Whenever we use static method only static variables can be used
+-If you need to use the static method then you can use it using class_name.method_name (you do not have to create object)
+
+-You can write a static block to declare all your variables which is called as static block
+
+static
+{
+city='Delhi'
+int a=2;
+
+}
+
+
+:final
+
+-wherever you are using variable with final then it cannot be changed, if used with class then it cannot be inherited whenever extends and when used at method level than that method cannot be overriden but can be overloaded::: Nothing can be changed when stated final
+private and final methods can be overloaded
+
+:finally
+
+This block will be executed whether program goes into try or catch
+except sys.exit()
+
+:finalize
+It is a method that the Garbage Collector always calls just before the deletion/destroying the object which is eligible for Garbage Collection, so as to perform clean-up activity
+
+
+:throw vs throws
+
+throw-  to throw the exception explicitly
+        throw used in method body
+        single exception can be used
+        for unchecked/runtime exception
+
+throws- used to declare the exception just like try catch
+        throws used in method signature
+        multiple exceptions can be used using comma
+        for checked/complie time exception
+
+
+
+:multiple try with single catch is not allowed
+:you can have multiple catch for a try statement
+
+:Object is the superclass of all the other classes in Java
+:throwable is the superclass of all the errors and exceptions in Java
+
+
+:Checked (compile) vs unchecked (run time) exceptions-
+
+: All exceptions occur at run time 
+: Complile time-
+Ex: fis when specifying the path for the file so compiler suggest to implement try/catch/ use throws to declare the exception so that the exceptions does not occur in future
+: IO exception, class not found, methdonot found
+:They are subclass of Exception
+
+
+:RunTime-
+Which compiler is not able to interrupt/ignores , Such are called run time exceptions
+ex- Arithematic exception where you are say dividinh 10 by 0 so that will be compiled but a run time it will throw an error
+ex- IndexoutOfBound exception
+:they are direct subclass of runtime Exception
+
+
+:Association, Aggregation, and Composition in OOP???
+
+
+
+
+

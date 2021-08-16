@@ -1,0 +1,44 @@
+git config --global user.name "rahul"
+git config --global user.email "email_address"
+
+--Create a folder for local repository in your drive
+
+--move to location of git
+--git init
+
+--git status (to check what is pending to be commited)
+
+--git add .
+
+--git commit -m "your message"
+
+--git remote add origin 'repo url'
+
+--git push origin master
+
+--git clone 'clone url from repo click clone and get the url'
+
+--make some changes if you want after cloning and working and perform the same operation to push the code bu adding,commiting and pushing
+
+--git pull origin master
+
+--Branching concept
+--git checkout -b branchname (New branch creation)
+
+--To know in which branch you are into
+:git branch (it will total branches and highlights the one you are working on)
+
+--Now make the changes to commit n push and all which will be done on the same branch until you change it'
+
+--git checkout branchname (switched to branch)
+
+:Merge
+--git checkout master
+--git pull origin master (just to make sure we have the latest code)
+
+--git merge branch_name
+
+:Merge Conflicts
+-This mostly happens when git is not able to decide which version of the file is correct during the merging because one of the file is modified by a person which doesn't has the same version as the other person do
+So in that case it will say clearly which file has a conflict & then whosever is the owner of the file should coordinate & then resolve the conflicts
+

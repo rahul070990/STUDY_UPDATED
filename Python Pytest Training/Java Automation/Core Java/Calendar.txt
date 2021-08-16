@@ -1,0 +1,17 @@
+:Date Class Concept-
+
+Date d=new Date(); (import util.Date)
+
+SimpleDateFormat sdf= new SimpleDateFormat ('Pass the format you need')
+
+sdf.format(d)
+
+
+:Working with Calendar Object in Java-
+
+Calendar cal= Calendar.getInstance();
+SimpleDateFormat sdf= new SimpleDateFormat ('Pass the format you need')
+
+sd.format(cal.getTime());
+--Lot of advanced features in Calendar Object
+

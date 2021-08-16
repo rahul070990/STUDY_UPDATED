@@ -1,0 +1,816 @@
+Delivered-To: r.rrahulsept07@gmail.com
+Received: by 2002:a7b:c74e:0:0:0:0:0 with SMTP id w14csp2427313wmk;
+        Thu, 14 Nov 2019 22:57:40 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwZn9ocheCqj/Z6yzMZYSRAIpQo5Mz9n7d5+3dTJS9hUAWHOXXSSEtHoVdZ0MNwTfJlDPgY
+X-Received: by 2002:a92:b70c:: with SMTP id k12mr13952934ili.55.1573801059976;
+        Thu, 14 Nov 2019 22:57:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1573801059; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kPJXrDlM/Lvl+UbBkuZGDfsj66Cw4TadAvzxZZ1BZyR1ymlXr1nyOWfrMf3qF8jNHO
+         qtFePmNVUii5FUdIcHdJvi/azsruchwQ2/dKLIn/EYZSKQuv1+fX0FpMPkBrFVhmydnM
+         fN1ht617+AV04pIwu3WGGMhJ8Vaf0sVHe0n7A99OmkAcfF0B2hv5LjbfGCTRkqDGO7ob
+         XMPOuw+Oyj/tgmQbaK27SEZSVRmBe9Yq4vbMyQjlFBpBUDXNlNmWmHlPKUwIBdmvX+s6
+         XQ+z8UEzqyM04IDYI29wrLU71thVJKHWV+fYLqS1dwoYcAHax0QGQE9kpYxXHNgMYxLj
+         TaDw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:list-unsubscribe:precedence:sender
+         :reply-to:mime-version:dkim-signature;
+        bh=rY3BBW/Xj+hc9wmSm8e8lcp4h1ZVJaztM3eDNHkRwKA=;
+        b=MDsyk0M5m30llpJG0tNQ6n/r4k0Hs26IRVe2t3dSW3iDL7WeqgmD2H2/kPUqagWGcW
+         yrmOJQ9SaQ/rI3Tr0JbjHM5BeDRo07Ghkab6RF3j+965Ua4pRYuXl+oAaPR595WPIxKh
+         BKBm2qjAGdAylFjK9nWd9Is/lxCD/+acYXyrVUQSq4KzUEQt4RBgph/HupPyYdt9pxN7
+         kI4TXCbsBA5JBjdps0BUNHvKqD79hQlxfrcaXopZZ5gW2x6FMAoqEYgwLCn/fVg11AVy
+         qvReBM8xweySJ42LtJ/LKirsigiVl0MVcnW6D+jt58zLFoy0V+d2algBNfAnPKvGbNm/
+         xTBA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=vQeaRLL4;
+       spf=pass (google.com: domain of 3ykzoxrekdikstwjuqd+kjjiuwtcdlttlqj.htrw.wwfmzqxjuyfmlrfnq.htr@feedburner.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3YkzOXREKDikSTWJUQd+KJJIUWTcdLTTLQJ.HTRW.WWFMZQXJUYfmLRFNQ.HTR@feedburner.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3YkzOXREKDikSTWJUQd+KJJIUWTcdLTTLQJ.HTRW.WWFMZQXJUYfmLRFNQ.HTR@feedburner.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id q46sor5499488jac.12.2019.11.14.22.57.39
+        for <r.rrahulsept07@gmail.com>
+        (Google Transport Security);
+        Thu, 14 Nov 2019 22:57:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of 3ykzoxrekdikstwjuqd+kjjiuwtcdlttlqj.htrw.wwfmzqxjuyfmlrfnq.htr@feedburner.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=vQeaRLL4;
+       spf=pass (google.com: domain of 3ykzoxrekdikstwjuqd+kjjiuwtcdlttlqj.htrw.wwfmzqxjuyfmlrfnq.htr@feedburner.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3YkzOXREKDikSTWJUQd+KJJIUWTcdLTTLQJ.HTRW.WWFMZQXJUYfmLRFNQ.HTR@feedburner.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:reply-to:sender:precedence:list-unsubscribe:message-id
+         :date:subject:from:to;
+        bh=rY3BBW/Xj+hc9wmSm8e8lcp4h1ZVJaztM3eDNHkRwKA=;
+        b=vQeaRLL4QS3idkvCx6hFjBx3L3vZxXBrAXxcaPZDbE4/0tgrXjB1uaH3yU7XKP8Go1
+         I/RchnBidydgBqQyjl6BsLIuWJ5YYbqNBvFyyIqQD4qQAhWQ9r1x51YdjxTY8AD04n77
+         lCN4ha81RqUmIZlXGve91hyDGt2GryevnxoSYfVWFUThdBGkDqXhi8HuPGVkNiErxj7k
+         agY3OTLaupTgw8GnzoKR/DkNGWmbWsI0oIohdjoOieGImA8c9cT141+NJwxwBTaz6Qvm
+         Fl9lyhqBCAGZrFm4I+5jhNwfoUfqGZTzefHOttu0nO6MgYb/R3LCJuGPk2aR4rvO9KIZ
+         yu3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:reply-to:sender:precedence
+         :list-unsubscribe:message-id:date:subject:from:to;
+        bh=rY3BBW/Xj+hc9wmSm8e8lcp4h1ZVJaztM3eDNHkRwKA=;
+        b=F0xVCqJsg0hsIWHd9UuKMA/n2doKo+kNsVIaBFVKh6m/9Zk+dQPxOT3MY1BpL9C8WR
+         XP2lr8VDNIHdq9pHj69JVran5veBtJWGbw+yhWE7vmlqRZ0W4JxPaNRRlVACnk53CgJP
+         X/S26ZL7RqsnlVPadscRbWqi/7qb3ore7ufFsLt7vpK09Jk83SCtQFWzWl6JuD9DnAA3
+         TNZSysNdmOKkpxQLK2JmKRqXyXnyVHGiJrzBpaaWWDQVBpL8VVPcWunsi2nkSbQljKSF
+         /6vUpEmAuJqT8oMyLItZAi/bps51/P4+IHW056fZ/GHF4TkY7ZG+nHh+GYwG2yyulANz
+         QhwA==
+X-Gm-Message-State: APjAAAV33wjYiACyoOukCNIIOkT2Y9IRCDYuThtmly0193zRxM8DTQFb
+	Z91ZhtCI1kbGTQWmr+SHuXo1mPnBVJKU4rKc6EDtRbI=
+MIME-Version: 1.0
+X-Received: by 2002:a05:6638:3e9:: with SMTP id s9mt10320667jaq.7.1573801058271;
+ Thu, 14 Nov 2019 22:57:38 -0800 (PST)
+Reply-To: "Jobs in India by YuvaJobs.com" <jobalert@yuvajobs.com>
+Sender: noreply+feedproxy@google.com
+Precedence: bulk
+List-Unsubscribe: <https://feedburner.google.com/fb/a/mailunsubscribe?k=TOGNdfxerU-BmTQfxHCP9GpzWy0>
+Message-ID: <000000000000068a7705975d1d56@google.com>
+Date: Fri, 15 Nov 2019 06:57:39 +0000
+Subject: Freshers Jobs - 10 new items
+From: "Jobs in India by YuvaJobs.com" <noreply+feedproxy@google.com>
+To: r.rrahulsept07@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000019339805975d1d7a"
+
+--00000000000019339805975d1d7a
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+Sm9icyBpbiBJbmRpYSBieSBZdXZhSm9icy5jb20NCg0KLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8v
+Ly8vLy8vLy8vLy8vLy8vLy8vLw0KTmV3IEpvYiAtIEV4ZWN1dGl2ZSBFbmdpbmVlcg0KDQpQb3N0
+ZWQ6DQpodHRwOi8vZmVlZHByb3h5Lmdvb2dsZS5jb20vfnIvVG9kYXlGcmVzaGVySm9ic0xpc3Qt
+WXV2YWpvYnNjb20vfjMvOEVfM0F2Rk43Q28vam9icy12YWNhbmN5LW5pdC1kZWxoaS1leGVjdXRp
+dmUtZW5naW5lZXItNTk2NDUyNi5odG1sP3V0bV9zb3VyY2U9ZmVlZGJ1cm5lciZ1dG1fbWVkaXVt
+PWVtYWlsDQoNCk5hdGlvbmFsIEluc3RpdHV0ZSBvZiBUZWNobm9sb2d5IE5JVCBEZWxoaSBSZWNy
+dWl0bWVudCAuIEFwcGx5IE9ubGluZSBmb3IgIA0KRXhlY3V0aXZlIEVuZ2luZWVyIFBvc3RzLiBJ
+bnRlcmVzdGVkIGNhbmRpZGF0ZXMgd2hvIGNvbXBsZXRlZCBhbGwgIA0KRWxpZ2liaWxpdHkgQ2Fu
+IFJlYWQgdGhlIEZ1bGwgQWR2ZXJ0aXNlbWVudCBEZXRhaWxzIC4uLi5WaWV3IExpbmsgRm9yIE1v
+cmUNCg0KDQoNCi8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8NCk5l
+dyBKb2IgLSBDb250ZW50IERldmVsb3BtZW50IEphdmEgUHJvZ3JhbW1pbmcgSW50ZXJuc2hpcCBJ
+biBNdWx0aXBsZSAgDQpMb2NhdGlvbnMgQXQgRXZlbHluIExlYXJuaW5nIFN5c3RlbQ0KDQpQb3N0
+ZWQ6DQpodHRwOi8vZmVlZHByb3h5Lmdvb2dsZS5jb20vfnIvVG9kYXlGcmVzaGVySm9ic0xpc3Qt
+WXV2YWpvYnNjb20vfjMveTdvNDVzNVB4UVEvam9icy12YWNhbmN5LWNvbnRlbnQtZGV2ZWxvcG1l
+bnQtamF2YS1wcm9ncmFtbWluZy1pbnRlcm5zaGlwLWluLW11bHRpcGxlLWxvY2F0aW9ucy1hdC1l
+dmVseW4tbGVhcm5pbmctc3lzdGVtLWV2ZWx5bi1sZWFybmluZy1zeXN0ZW0tNTk2NDUyNC5odG1s
+P3V0bV9zb3VyY2U9ZmVlZGJ1cm5lciZ1dG1fbWVkaXVtPWVtYWlsDQoNClNlbGVjdGVkIGludGVy
+biBzIGRheSB0byBkYXkgcmVzcG9uc2liaWxpdGllcyBpbmNsdWRlIC4gQ3JlYXRpbmcgcmV2aWV3
+aW5nICANCmFuZCBmaXhpbmcgY29udGVudCBmb3IgQW1lcmljYW4gdGV4dGJvb2tzIC4gQW5zd2Vy
+aW5nIGhvbWV3b3JrIGhlbHAgIA0KcXVlc3Rpb25zIHggcG9zdGVkIGJ5IGhpZ2ggc2Nob29sIGFu
+ZCBjb2xsZWdlIHN0Li4uLlZpZXcgTGluayBGb3IgTW9yZQ0KDQoNCg0KLy8vLy8vLy8vLy8vLy8v
+Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLw0KTmV3IEpvYiAtIE9wZXJhdGlvbnMgRXhlY3V0
+aXZlDQoNClBvc3RlZDoNCmh0dHA6Ly9mZWVkcHJveHkuZ29vZ2xlLmNvbS9+ci9Ub2RheUZyZXNo
+ZXJKb2JzTGlzdC1ZdXZham9ic2NvbS9+My9keTl4N3RsOFo2OC9qb2JzLXZhY2FuY3ktb3BlcmF0
+aW9ucy1leGVjdXRpdmUtYW1hem9uLTU5NjQ1MzMuaHRtbD91dG1fc291cmNlPWZlZWRidXJuZXIm
+dXRtX21lZGl1bT1lbWFpbA0KDQpKT0IgREVTQ1JJUFRJT04gVGhlIE9wZXJhdGlvbnMgZXhlY3V0
+aXZlIGluIFN1cHBseSBDaGFpbiBhY3RzIGFzIHRoZSAgDQpwcmltYXJ5IGludGVyZmFjZSBiZXR3
+ZWVuIEFtYXpvbiBhbmQgb3VyIGJ1c2luZXNzIHBhcnRuZXJzLiBUaGUgRXhlY3V0aXZlICANCndp
+bGwgYmUgcmVzcG9uc2libGUgZm9yIHByb3ZpZGluZyB0aW1lbHkgYW5kIGFjY3VyYS4uLi5WaWV3
+IExpbmsgRm9yIE1vcmUNCg0KDQoNCi8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8v
+Ly8vLy8vLy8NCk5ldyBKb2IgLSBTdWJqZWN0IE1hdHRlciBFeHBlcnQgU3RhdGlzdGljcyBJbnRl
+cm5zaGlwIEluIE11bHRpcGxlIExvY2F0aW9ucyAgDQpBdCBFdmVseW4gTGVhcm5pbmcgU3lzdGVt
+DQoNClBvc3RlZDoNCmh0dHA6Ly9mZWVkcHJveHkuZ29vZ2xlLmNvbS9+ci9Ub2RheUZyZXNoZXJK
+b2JzTGlzdC1ZdXZham9ic2NvbS9+My9oLWNBMWVRU3lGYy9qb2JzLXZhY2FuY3ktc3ViamVjdC1t
+YXR0ZXItZXhwZXJ0LXN0YXRpc3RpY3MtaW50ZXJuc2hpcC1pbi1tdWx0aXBsZS1sb2NhdGlvbnMt
+YXQtZXZlbHluLWxlYXJuaW5nLXN5c3RlbS1ldmVseW4tbGVhcm5pbmctc3lzdGVtLTU5NjQ1MjUu
+aHRtbD91dG1fc291cmNlPWZlZWRidXJuZXImdXRtX21lZGl1bT1lbWFpbA0KDQpTZWxlY3RlZCBp
+bnRlcm4gcyBkYXkgdG8gZGF5IHJlc3BvbnNpYmlsaXRpZXMgaW5jbHVkZSAuIENyZWF0aW5nIHJl
+dmlld2luZyAgDQphbmQgZml4aW5nIGNvbnRlbnQgZm9yIEFtZXJpY2FuIHRleHRib29rcyAuIFRo
+aW5raW5nIG91dCBvZiB0aGUgYm94IHRvICANCmNyZWF0ZSBpbm5vdmF0aXZlIHdheXMgdG8gaW1w
+YXJ0IGVkdWNhdGlvbiBhbmQgLi4uLlZpZXcgTGluayBGb3IgTW9yZQ0KDQoNCg0KLy8vLy8vLy8v
+Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLw0KTmV3IEpvYiAtIEp1bmlvciBFbmdp
+bmVlcmluZyBBc3Npc3RhbnQgUHJvZHVjdGlvbg0KDQpQb3N0ZWQ6DQpodHRwOi8vZmVlZHByb3h5
+Lmdvb2dsZS5jb20vfnIvVG9kYXlGcmVzaGVySm9ic0xpc3QtWXV2YWpvYnNjb20vfjMvNUJLTENs
+QlZreEUvam9icy12YWNhbmN5LWNwY2wtanVuaW9yLWVuZ2luZWVyaW5nLWFzc2lzdGFudC1wcm9k
+dWN0aW9uLTU5NjQ1MjcuaHRtbD91dG1fc291cmNlPWZlZWRidXJuZXImdXRtX21lZGl1bT1lbWFp
+bA0KDQpDaGVubmFpIFBldHJvbGV1bSBDb3Jwb3JhdGlvbiBMdGQgQ1BDTCBSZWNydWl0bWVudCAu
+IEFwcGx5IE9ubGluZSBmb3IgIA0KSnVuaW9yIEVuZ2luZWVyaW5nIEFzc2lzdGFudCBQcm9kdWN0
+aW9uIFBvc3RzLiBJbnRlcmVzdGVkIGNhbmRpZGF0ZXMgd2hvICANCmNvbXBsZXRlZCBhbGwgRWxp
+Z2liaWxpdHkgQ2FuIFJlYWQgdGhlIEZ1bGwgQWQuLi4uVmlldyBMaW5rIEZvciBNb3JlDQoNCg0K
+DQovLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vDQpOZXcgSm9iIC0g
+U29mdHdhcmUgRGV2ZWxvcG1lbnQgRW5naW5lZXIgSW50ZXJuDQoNClBvc3RlZDoNCmh0dHA6Ly9m
+ZWVkcHJveHkuZ29vZ2xlLmNvbS9+ci9Ub2RheUZyZXNoZXJKb2JzTGlzdC1ZdXZham9ic2NvbS9+
+My9BRFcybmVmdEtYSS9qb2JzLXZhY2FuY3ktc29mdHdhcmUtZGV2ZWxvcG1lbnQtZW5naW5lZXIt
+aW50ZXJuLW1hc3RlcmNhcmQtNTk2NDUzMC5odG1sP3V0bV9zb3VyY2U9ZmVlZGJ1cm5lciZ1dG1f
+bWVkaXVtPWVtYWlsDQoNCkpvYiBEZXNjcmlwdGlvbiBmb3IgTWFzdGVyQ2FyZCBGcmVzaGVycyBS
+ZWNydWl0bWVudCBBcyBTb2Z0d2FyZSBEZXZlbG9wbWVudCAgDQpFbmdpbmVlciBJbnRlcm4gRG8g
+eW91IHdhbnQgdG8gYmUgYSBwYXJ0IG9mIGEgY29sbGFib3JhdGl2ZSBlbnZpcm9ubWVudCBBcmUg
+IA0KeW91IG1vdGl2YXRlZCB0byBiZSBhIHBhcnQgb2YgZHJpdmluZyBhIHdvcmxkLi4uLlZpZXcg
+TGluayBGb3IgTW9yZQ0KDQoNCg0KLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8v
+Ly8vLy8vLw0KTmV3IEpvYiAtIFdhbGsgaW4gSW50ZXJ2aWV3IE9uIHRoIE5vdmVtYmVyDQoNClBv
+c3RlZDoNCmh0dHA6Ly9mZWVkcHJveHkuZ29vZ2xlLmNvbS9+ci9Ub2RheUZyZXNoZXJKb2JzTGlz
+dC1ZdXZham9ic2NvbS9+My9XdlhUUTV0Q3VTby9qb2JzLXZhY2FuY3ktd2Fsay1pbi1pbnRlcnZp
+ZXctb24tMTZ0aC1ub3ZlbWJlci1maW5hbmNpYWwtc29mdHdhcmUtYW5kLXN5c3RlbXMtNTk2NDUz
+Mi5odG1sP3V0bV9zb3VyY2U9ZmVlZGJ1cm5lciZ1dG1fbWVkaXVtPWVtYWlsDQoNCkpvYiBQcm9m
+aWxlIE9wcG9ydHVuaXR5IGZvciBGcmVzaGVycyBpbiBGU1MgYXMgVGVjaG5pY2FsIEFzc29jaWF0
+ZS4gIA0KSW50ZXJlc3RlZCBjYW5kaWRhdGVzIGNhbiBkaXJlY3RseSB3YWxrIGluIGF0IEZTUyBw
+cmVtaXNlcy4gQWxzbyBwbGVhc2UgIA0Kc2hhcmUgeW91ciB1cGRhdGVkIENWIGZvciBvdXIgaW50
+ZXJuYWwgY29tbXVuaWNhdGlvbi4gSm9iLi4uLlZpZXcgTGluayBGb3IgIA0KTW9yZQ0KDQoNCg0K
+Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLw0KTmV3IEpvYiAtIFBo
+RCBQcm9ncmFtbWUNCg0KUG9zdGVkOg0KaHR0cDovL2ZlZWRwcm94eS5nb29nbGUuY29tL35yL1Rv
+ZGF5RnJlc2hlckpvYnNMaXN0LVl1dmFqb2JzY29tL34zL2xEOVJDWjNTaEVnL2pvYnMtdmFjYW5j
+eS1kaWF0LWRlZmVuY2UtaW5zdGl0dXRlLW9mLWFkdmFuY2VkLXRlY2hub2xvZ3ktcGhkLXByb2dy
+YW1tZS01OTY0NTI4Lmh0bWw/dXRtX3NvdXJjZT1mZWVkYnVybmVyJnV0bV9tZWRpdW09ZW1haWwN
+Cg0KQWRtaXNzaW9uIHRvIFBoRCBQcm9ncmFtbWUgSmFuIE5vLiBvZiBWYWNhbmNpZXMgbmJzcCBF
+bGlnaWJpbGl0eSBuYnNwIEEgIA0KY2FuZGlkYXRlIHNlZWtpbmcgYWRtaXNzaW9uIHRvIHRoZSBQ
+aC5ELiBwcm9ncmFtIHNoYWxsIGJlIHJlcXVpcmVkIHRvIGhhdmUgIA0KcGFzc2VkIHRoZSBxdWFs
+aWZ5aW5nIGV4YW1pbmF0aW9uIHMuLi4uVmlldyBMaW5rIEZvciBNb3JlDQoNCg0KDQovLy8vLy8v
+Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vDQpOZXcgSm9iIC0gQ3JlZGl0IFBv
+cnRmb2xpbyBBbmFseXN0DQoNClBvc3RlZDoNCmh0dHA6Ly9mZWVkcHJveHkuZ29vZ2xlLmNvbS9+
+ci9Ub2RheUZyZXNoZXJKb2JzTGlzdC1ZdXZham9ic2NvbS9+My81VmZkVXhPVm5OVS9qb2JzLXZh
+Y2FuY3ktY3JlZGl0LXBvcnRmb2xpby1hbmFseXN0LWNpdGliYW5rLW5hLTU5NjQ1MjkuaHRtbD91
+dG1fc291cmNlPWZlZWRidXJuZXImdXRtX21lZGl1bT1lbWFpbA0KDQpKb2IgRGVzY3JpcHRpb24g
+VGhlIENyZWRpdCBQb3J0Zm9saW8gQW5hbHlzdCBpcyBhbiBlbnRyeSBsZXZlbCBwb3NpdGlvbiAg
+DQpyZXNwb25zaWJsZSBmb3IgcGFydGljaXBhdGluZyBpbiBhIHZhcmlldHkgb2YgcG9ydGZvbGlv
+IG1vbml0b3JpbmcgIA0KYWN0aXZpdGllcyB0byBpZGVudGlmeSBjcmVkaXQgbWlncmF0aW9uIGlu
+IGNvb3JkaW5hdGlvbiB3aXRoIC4uLi5WaWV3IExpbmsgIA0KRm9yIE1vcmUNCg0KDQoNCi8vLy8v
+Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8NCk5ldyBKb2IgLSBQYXJ0cyBG
+b3JlY2FzdCBBbmFseXN0DQoNClBvc3RlZDoNCmh0dHA6Ly9mZWVkcHJveHkuZ29vZ2xlLmNvbS9+
+ci9Ub2RheUZyZXNoZXJKb2JzTGlzdC1ZdXZham9ic2NvbS9+My9BSGhQMXdCTjM3RS9qb2JzLXZh
+Y2FuY3ktcGFydHMtZm9yZWNhc3QtYW5hbHlzdC1qb2huLWRlZXJlLTU5NjQ1MzEuaHRtbD91dG1f
+c291cmNlPWZlZWRidXJuZXImdXRtX21lZGl1bT1lbWFpbA0KDQpKb2IgRGVzY3JpcHRpb24gV2l0
+aCB0aGUgZXhwYW5zaW9uIG9mIEluZGlhIFBEQyBuZXcgRGVwb3QgaXMgdW5kZXIgIA0KZXN0YWJs
+aXNobWVudC4gVGhlIG5ldyBwb3NpdGlvbiB3aWxsIGJlIHJlc3BvbnNpYmxlIGZvciBiZWxvdyBk
+dXRpZXMgTmV3ICANCmRlcG90IHdpbGwgY2F0ZXIgZm9yIG9pbCBjb29sYW50IGRlbWFuZCBmb3Ig
+ZGl2aXNpb24gdy4uLi5WaWV3IExpbmsgRm9yIE1vcmUNCg0KDQoNCi0tDQpZb3UgYXJlIHN1YnNj
+cmliZWQgdG8gZW1haWwgdXBkYXRlcyBmcm9tICJKb2JzIGluIEluZGlhIGJ5IFl1dmFKb2JzLmNv
+bS4iDQpUbyBzdG9wIHJlY2VpdmluZyB0aGVzZSBlbWFpbHMsIHlvdSBtYXkgdW5zdWJzY3JpYmUg
+bm93OiAgDQpodHRwczovL2ZlZWRidXJuZXIuZ29vZ2xlLmNvbS9mYi9hL21haWx1bnN1YnNjcmli
+ZT9rPVRPR05kZnhlclUtQm1UUWZ4SENQOUdweld5MA0KDQpFbWFpbCBkZWxpdmVyeSBwb3dlcmVk
+IGJ5IEdvb2dsZS4NCkdvb2dsZSwgMTYwMCBBbXBoaXRoZWF0cmUgUGFya3dheSwgTW91bnRhaW4g
+VmlldywgQ0EgOTQwNDMsIFVuaXRlZCBTdGF0ZXMNCg0K
+--00000000000019339805975d1d7a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<META http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<title>Jobs in India by YuvaJobs.com</title>
+</head>
+<body>
+<style type=3D"text/css">
+
+                        h1 a:hover {background-color:#888;color:#fff ! impo=
+rtant;}
+
+                        div#emailbody table#itemcontentlist tr td div ul {
+                                        list-style-type:square;
+                                        padding-left:1em;
+                        }
+       =20
+                        div#emailbody table#itemcontentlist tr td div block=
+quote {
+                                padding-left:6px;
+                                border-left: 6px solid #dadada;
+                                margin-left:1em;
+                        }
+       =20
+                        div#emailbody table#itemcontentlist tr td div li {
+                                margin-bottom:1em;
+                                margin-left:1em;
+                        }
+
+
+                        table#itemcontentlist tr td a:link, table#itemconte=
+ntlist tr td a:visited, table#itemcontentlist tr td a:active, ul#summarylis=
+t li a {
+                                color:#0000CC;
+                                font-weight:bold;
+                                text-decoration:none;
+                        }      =20
+
+                        img {border:none;}
+
+
+                </style>
+<div xmlns=3D"http://www.w3.org/1999/xhtml" id=3D"emailbody" style=3D"margi=
+n:0 2em;font-family:Arial, Helvetica, sans-serif;line-height:140%;font-size=
+:12px;color:#000000;">
+<table style=3D"border:0;padding:0;margin:0;width:100%">
+<tr>
+<td style=3D"vertical-align:top" width=3D"99%">
+<h1 style=3D"margin:0;padding-bottom:6px;">
+<a style=3D"color:#888;font-size:22px;font-family:Arial, Helvetica, sans-se=
+rif;font-weight:normal;text-decoration:none;" href=3D"https://www.yuvajobs.=
+com" title=3D"(https://www.yuvajobs.com)">Freshers Jobs - 10 new items</a>
+</h1>
+</td>
+<td width=3D"1%">
+<a href=3D"https://www.yuvajobs.com">
+<img src=3D"http://www.yuvajobs.com//images/2014/logo.gif" alt=3D"Link to J=
+obs in India by YuvaJobs.com" id=3D"feedimage" style=3D"padding:0 0 10px 3p=
+x;border:0;" />
+</a>
+</td>
+</tr>
+</table>
+<hr style=3D"border:1px solid #ccc;padding:0;margin:0" />
+<ul style=3D"clear:both;padding:0 0 0 1.2em;width:100%" id=3D"summarylist">
+<li>
+<a href=3D"#1">New Job - Executive Engineer</a>
+</li>
+<li>
+<a href=3D"#2">New Job - Content Development Java Programming Internship In=
+ Multiple Locations At Evelyn Learning System</a>
+</li>
+<li>
+<a href=3D"#3">New Job - Operations Executive</a>
+</li>
+<li>
+<a href=3D"#4">New Job - Subject Matter Expert Statistics Internship In Mul=
+tiple Locations At Evelyn Learning System</a>
+</li>
+<li>
+<a href=3D"#5">New Job - Junior Engineering Assistant Production</a>
+</li>
+<li>
+<a href=3D"#6">New Job - Software Development Engineer Intern</a>
+</li>
+<li>
+<a href=3D"#7">New Job - Walk in Interview On th November</a>
+</li>
+<li>
+<a href=3D"#8">New Job - PhD Programme</a>
+</li>
+<li>
+<a href=3D"#9">New Job - Credit Portfolio Analyst</a>
+</li>
+<li>
+<a href=3D"#10">New Job - Parts Forecast Analyst</a>
+</li>
+</ul>
+<table id=3D"itemcontentlist">
+<tr xmlns=3D"">
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"1" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/8E_3AvFN7Co/jobs-vacancy-nit-delhi-executive-engineer-5964526.html?ut=
+m_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Executive Engineer<=
+/a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">National Institute of Technology NIT D=
+elhi Recruitment . Apply Online for Executive Engineer Posts. Interested ca=
+ndidates who completed all Eligibility Can Read the Full Advertisement Deta=
+ils ....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3D8E_3AvFN7Co:6qAMLDW7GFI:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3D8E_3AvFN7Co:6qAMLDW7GFI:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3D8E_3AvFN7Co:6qAML=
+DW7GFI:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D8E_3AvFN7Co:6qAMLDW7GFI:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D8E_3AvFN7Co:6qAM=
+LDW7GFI:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3D8E_3AvFN7Co:6qAMLDW7GFI:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3D8E_3AvFN7Co:6qAMLDW7GFI:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3D8E_3AvFN7Co:6qAMLDW7GFI:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3D8E=
+_3AvFN7Co:6qAMLDW7GFI:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D8E_3AvFN7Co=
+:6qAMLDW7GFI:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3D8E_3AvFN7Co:6qAMLDW7GFI:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3D8E_3AvFN7Co:6qAMLDW7GFI:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/8E_3AvFN7Co?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"2" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/y7o45s5PxQQ/jobs-vacancy-content-development-java-programming-interns=
+hip-in-multiple-locations-at-evelyn-learning-system-evelyn-learning-system-=
+5964524.html?utm_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Cont=
+ent Development Java Programming Internship In Multiple Locations At Evelyn=
+ Learning System</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Selected intern s day to day responsib=
+ilities include . Creating reviewing and fixing content for American textbo=
+oks . Answering homework help questions x posted by high school and college=
+ st....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3Dy7o45s5PxQQ:MU4SyrJhVck:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3Dy7o45s5PxQQ:MU4SyrJhVck:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3Dy7o45s5PxQQ:MU4Sy=
+rJhVck:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Dy7o45s5PxQQ:MU4SyrJhVck:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Dy7o45s5PxQQ:MU4S=
+yrJhVck:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3Dy7o45s5PxQQ:MU4SyrJhVck:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3Dy7o45s5PxQQ:MU4SyrJhVck:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3Dy7o45s5PxQQ:MU4SyrJhVck:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3Dy7=
+o45s5PxQQ:MU4SyrJhVck:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Dy7o45s5PxQQ=
+:MU4SyrJhVck:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3Dy7o45s5PxQQ:MU4SyrJhVck:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3Dy7o45s5PxQQ:MU4SyrJhVck:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/y7o45s5PxQQ?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"3" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/dy9x7tl8Z68/jobs-vacancy-operations-executive-amazon-5964533.html?utm=
+_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Operations Executive=
+</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">JOB DESCRIPTION The Operations executi=
+ve in Supply Chain acts as the primary interface between Amazon and our bus=
+iness partners. The Executive will be responsible for providing timely and =
+accura....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3Ddy9x7tl8Z68:UbHrWl3MEfU:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3Ddy9x7tl8Z68:UbHrWl3MEfU:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3Ddy9x7tl8Z68:UbHrW=
+l3MEfU:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Ddy9x7tl8Z68:UbHrWl3MEfU:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Ddy9x7tl8Z68:UbHr=
+Wl3MEfU:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3Ddy9x7tl8Z68:UbHrWl3MEfU:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3Ddy9x7tl8Z68:UbHrWl3MEfU:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3Ddy9x7tl8Z68:UbHrWl3MEfU:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3Ddy=
+9x7tl8Z68:UbHrWl3MEfU:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Ddy9x7tl8Z68=
+:UbHrWl3MEfU:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3Ddy9x7tl8Z68:UbHrWl3MEfU:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3Ddy9x7tl8Z68:UbHrWl3MEfU:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/dy9x7tl8Z68?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"4" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/h-cA1eQSyFc/jobs-vacancy-subject-matter-expert-statistics-internship-=
+in-multiple-locations-at-evelyn-learning-system-evelyn-learning-system-5964=
+525.html?utm_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Subject =
+Matter Expert Statistics Internship In Multiple Locations At Evelyn Learnin=
+g System</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Selected intern s day to day responsib=
+ilities include . Creating reviewing and fixing content for American textbo=
+oks . Thinking out of the box to create innovative ways to impart education=
+ and ....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3Dh-cA1eQSyFc:N_n5SsRCRpQ:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3Dh-cA1eQSyFc:N_n5SsRCRpQ:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3Dh-cA1eQSyFc:N_n5S=
+sRCRpQ:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Dh-cA1eQSyFc:N_n5SsRCRpQ:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Dh-cA1eQSyFc:N_n5=
+SsRCRpQ:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3Dh-cA1eQSyFc:N_n5SsRCRpQ:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3Dh-cA1eQSyFc:N_n5SsRCRpQ:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3Dh-cA1eQSyFc:N_n5SsRCRpQ:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3Dh-=
+cA1eQSyFc:N_n5SsRCRpQ:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3Dh-cA1eQSyFc=
+:N_n5SsRCRpQ:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3Dh-cA1eQSyFc:N_n5SsRCRpQ:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3Dh-cA1eQSyFc:N_n5SsRCRpQ:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/h-cA1eQSyFc?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"5" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/5BKLClBVkxE/jobs-vacancy-cpcl-junior-engineering-assistant-production=
+-5964527.html?utm_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Jun=
+ior Engineering Assistant Production</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Chennai Petroleum Corporation Ltd CPCL=
+ Recruitment . Apply Online for Junior Engineering Assistant Production Pos=
+ts. Interested candidates who completed all Eligibility Can Read the Full A=
+d....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3D5BKLClBVkxE:ad8WTQPP1q8:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3D5BKLClBVkxE:ad8WTQPP1q8:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3D5BKLClBVkxE:ad8WT=
+QPP1q8:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D5BKLClBVkxE:ad8WTQPP1q8:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D5BKLClBVkxE:ad8W=
+TQPP1q8:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3D5BKLClBVkxE:ad8WTQPP1q8:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3D5BKLClBVkxE:ad8WTQPP1q8:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3D5BKLClBVkxE:ad8WTQPP1q8:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3D5B=
+KLClBVkxE:ad8WTQPP1q8:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D5BKLClBVkxE=
+:ad8WTQPP1q8:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3D5BKLClBVkxE:ad8WTQPP1q8:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3D5BKLClBVkxE:ad8WTQPP1q8:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/5BKLClBVkxE?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"6" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/ADW2neftKXI/jobs-vacancy-software-development-engineer-intern-masterc=
+ard-5964530.html?utm_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - =
+Software Development Engineer Intern</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Job Description for MasterCard Fresher=
+s Recruitment As Software Development Engineer Intern Do you want to be a p=
+art of a collaborative environment Are you motivated to be a part of drivin=
+g a world....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3DADW2neftKXI:wUO_mzjmOes:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3DADW2neftKXI:wUO_mzjmOes:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DADW2neftKXI:wUO_m=
+zjmOes:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DADW2neftKXI:wUO_mzjmOes:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DADW2neftKXI:wUO_=
+mzjmOes:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3DADW2neftKXI:wUO_mzjmOes:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3DADW2neftKXI:wUO_mzjmOes:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3DADW2neftKXI:wUO_mzjmOes:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DAD=
+W2neftKXI:wUO_mzjmOes:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DADW2neftKXI=
+:wUO_mzjmOes:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3DADW2neftKXI:wUO_mzjmOes:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3DADW2neftKXI:wUO_mzjmOes:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/ADW2neftKXI?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"7" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/WvXTQ5tCuSo/jobs-vacancy-walk-in-interview-on-16th-november-financial=
+-software-and-systems-5964532.html?utm_source=3Dfeedburner&amp;utm_medium=
+=3Demail">New Job - Walk in Interview On th November</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Job Profile Opportunity for Freshers i=
+n FSS as Technical Associate. Interested candidates can directly walk in at=
+ FSS premises. Also please share your updated CV for our internal communica=
+tion. Job....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3DWvXTQ5tCuSo:6Hx-XohBb_Y:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3DWvXTQ5tCuSo:6Hx-XohBb_Y:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DWvXTQ5tCuSo:6Hx-X=
+ohBb_Y:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DWvXTQ5tCuSo:6Hx-XohBb_Y:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DWvXTQ5tCuSo:6Hx-=
+XohBb_Y:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3DWvXTQ5tCuSo:6Hx-XohBb_Y:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3DWvXTQ5tCuSo:6Hx-XohBb_Y:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3DWvXTQ5tCuSo:6Hx-XohBb_Y:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DWv=
+XTQ5tCuSo:6Hx-XohBb_Y:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DWvXTQ5tCuSo=
+:6Hx-XohBb_Y:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3DWvXTQ5tCuSo:6Hx-XohBb_Y:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3DWvXTQ5tCuSo:6Hx-XohBb_Y:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/WvXTQ5tCuSo?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"8" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/lD9RCZ3ShEg/jobs-vacancy-diat-defence-institute-of-advanced-technolog=
+y-phd-programme-5964528.html?utm_source=3Dfeedburner&amp;utm_medium=3Demail=
+">New Job - PhD Programme</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Admission to PhD Programme Jan No. of =
+Vacancies nbsp Eligibility nbsp A candidate seeking admission to the Ph.D. =
+program shall be required to have passed the qualifying examination s....Vi=
+ew Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3DlD9RCZ3ShEg:yPN-hTtDwYk:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3DlD9RCZ3ShEg:yPN-hTtDwYk:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DlD9RCZ3ShEg:yPN-h=
+TtDwYk:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DlD9RCZ3ShEg:yPN-hTtDwYk:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DlD9RCZ3ShEg:yPN-=
+hTtDwYk:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3DlD9RCZ3ShEg:yPN-hTtDwYk:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3DlD9RCZ3ShEg:yPN-hTtDwYk:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3DlD9RCZ3ShEg:yPN-hTtDwYk:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DlD=
+9RCZ3ShEg:yPN-hTtDwYk:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DlD9RCZ3ShEg=
+:yPN-hTtDwYk:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3DlD9RCZ3ShEg:yPN-hTtDwYk:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3DlD9RCZ3ShEg:yPN-hTtDwYk:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/lD9RCZ3ShEg?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"9" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:1=
+6px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobsc=
+om/~3/5VfdUxOVnNU/jobs-vacancy-credit-portfolio-analyst-citibank-na-5964529=
+.html?utm_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Credit Port=
+folio Analyst</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Job Description The Credit Portfolio A=
+nalyst is an entry level position responsible for participating in a variet=
+y of portfolio monitoring activities to identify credit migration in coordi=
+nation with ....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3D5VfdUxOVnNU:kboMK_TE_AY:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3D5VfdUxOVnNU:kboMK_TE_AY:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3D5VfdUxOVnNU:kboMK=
+_TE_AY:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D5VfdUxOVnNU:kboMK_TE_AY:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D5VfdUxOVnNU:kboM=
+K_TE_AY:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3D5VfdUxOVnNU:kboMK_TE_AY:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3D5VfdUxOVnNU:kboMK_TE_AY:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3D5VfdUxOVnNU:kboMK_TE_AY:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3D5V=
+fdUxOVnNU:kboMK_TE_AY:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3D5VfdUxOVnNU=
+:kboMK_TE_AY:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3D5VfdUxOVnNU:kboMK_TE_AY:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3D5VfdUxOVnNU:kboMK_TE_AY:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/5VfdUxOVnNU?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+<tr>
+<td style=3D"margin-bottom:0;line-height:1.4em;">
+<p style=3D"margin:1em 0 3px 0;">
+<a name=3D"10" style=3D"font-family:Arial, Helvetica, sans-serif;font-size:=
+16px;" href=3D"http://feedproxy.google.com/~r/TodayFresherJobsList-Yuvajobs=
+com/~3/AHhP1wBN37E/jobs-vacancy-parts-forecast-analyst-john-deere-5964531.h=
+tml?utm_source=3Dfeedburner&amp;utm_medium=3Demail">New Job - Parts Forecas=
+t Analyst</a>
+</p>
+<p style=3D"font-size:12px;color:#555;margin:9px 0 3px 0;font-family:Arial,=
+ Helvetica, sans-serif;line-height:140%;font-size:12px;">
+<span>Posted:</span>=20
+</p>
+<div style=3D"margin:0;font-family:Arial, Helvetica, sans-serif;line-height=
+:140%;font-size:12px;color:#000000;">Job Description With the expansion of =
+India PDC new Depot is under establishment. The new position will be respon=
+sible for below duties New depot will cater for oil coolant demand for divi=
+sion w....View Link For More<div class=3D"feedflare">
+<a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom=
+?a=3DAHhP1wBN37E:-45jkPD995A:yIl2AUoC8zA"><img src=3D"http://feeds.feedburn=
+er.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3DyIl2AUoC8zA" border=3D"0"><=
+/img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Y=
+uvajobscom?a=3DAHhP1wBN37E:-45jkPD995A:gIN9vFwOqvQ"><img src=3D"http://feed=
+s.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DAHhP1wBN37E:-45jk=
+PD995A:gIN9vFwOqvQ" border=3D"0"></img></a> <a href=3D"http://feeds.feedbur=
+ner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DAHhP1wBN37E:-45jkPD995A:Tz=
+evzKxY174"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList=
+-Yuvajobscom?d=3DTzevzKxY174" border=3D"0"></img></a> <a href=3D"http://fee=
+ds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DAHhP1wBN37E:-45j=
+kPD995A:KwTdNBX3Jqk"><img src=3D"http://feeds.feedburner.com/~ff/TodayFresh=
+erJobsList-Yuvajobscom?i=3DAHhP1wBN37E:-45jkPD995A:KwTdNBX3Jqk" border=3D"0=
+"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsLis=
+t-Yuvajobscom?a=3DAHhP1wBN37E:-45jkPD995A:qj6IDK7rITs"><img src=3D"http://f=
+eeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3Dqj6IDK7rITs" b=
+order=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFres=
+herJobsList-Yuvajobscom?a=3DAHhP1wBN37E:-45jkPD995A:V_sGLiPBpWU"><img src=
+=3D"http://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?i=3DAH=
+hP1wBN37E:-45jkPD995A:V_sGLiPBpWU" border=3D"0"></img></a> <a href=3D"http:=
+//feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?a=3DAHhP1wBN37E=
+:-45jkPD995A:F7zBnMyn0Lo"><img src=3D"http://feeds.feedburner.com/~ff/Today=
+FresherJobsList-Yuvajobscom?i=3DAHhP1wBN37E:-45jkPD995A:F7zBnMyn0Lo" border=
+=3D"0"></img></a> <a href=3D"http://feeds.feedburner.com/~ff/TodayFresherJo=
+bsList-Yuvajobscom?a=3DAHhP1wBN37E:-45jkPD995A:7Q72WNTAKBA"><img src=3D"htt=
+p://feeds.feedburner.com/~ff/TodayFresherJobsList-Yuvajobscom?d=3D7Q72WNTAK=
+BA" border=3D"0"></img></a>
+</div><img src=3D"http://feeds.feedburner.com/~r/TodayFresherJobsList-Yuvaj=
+obscom/~4/AHhP1wBN37E?utm_source=3Dfeedburner&utm_medium=3Demail" height=3D=
+"1" width=3D"1" alt=3D""/></div>
+</td>
+</tr>
+</table>
+<table style=3D"border-top:1px solid #999;padding-top:4px;margin-top:1.5em;=
+width:100%" id=3D"footer">
+<tr>
+<td style=3D"text-align:left;font-family:Helvetica,Arial,Sans-Serif;font-si=
+ze:11px;margin:0 6px 1.2em 0;color:#333;">You are subscribed to email updat=
+es from <a href=3D"https://www.yuvajobs.com">Jobs in India by YuvaJobs.com<=
+/a>.<br />To stop receiving these emails, you may <a href=3D"https://feedbu=
+rner.google.com/fb/a/mailunsubscribe?k=3DTOGNdfxerU-BmTQfxHCP9GpzWy0">unsub=
+scribe now</a>.</td>
+<td style=3D"font-family:Helvetica,Arial,Sans-Serif;font-size:11px;margin:0=
+ 6px 1.2em 0;color:#333;text-align:right;vertical-align:top">Email delivery=
+ powered by Google</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"text-align:left;font-family:Helvetica,Arial,Sans=
+-Serif;font-size:11px;margin:0 6px 1.2em 0;color:#333;">Google, 1600 Amphit=
+heatre Parkway, Mountain View, CA 94043, United States</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
+--00000000000019339805975d1d7a--

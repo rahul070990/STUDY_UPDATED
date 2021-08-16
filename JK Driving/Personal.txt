@@ -1,0 +1,66 @@
+https://www.delhipolice.nic.in/
+
+http://www.delhipolice.nic.in/register.html
+
+https://www.delhipolice.nic.in/register.html
+
+
+how to print using testng
+desired capability for windows platform- Done
+
+current page pe calendar date
+
+selenium rc properties- done RC server needs to be started which communicates between browser & code whereas WD 
+
+maven clean command-- This maven command executes the clean build life cycle and the install build phase in the default build life cycle.
+
+test fails at night but runs at afternoon
+
+
+ANalytics- Need specific information what is the requirement
+design- need finalizaton from your end/any app reference
+api- we are not doing it
+
+googlemaps- we will try to make it happen but 
+
+
+
+---------------------------
+
+Jhalak License Application no: 1891128120
+
+photo- 20kb
+all- 50kb
+
+Join Zoom Meeting
+https://us04web.zoom.us/j/75400434242?pwd=VHR1M0tyalZtNksrckJjRnFlbCtUdz09
+
+
+
+Meeting ID: 754 0043 4242
+Passcode: EMRrj2
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+
+Files>KT session for new joiners>Access, SiteCore
+
+
+
+
+
+
+
+
+
+
+
+

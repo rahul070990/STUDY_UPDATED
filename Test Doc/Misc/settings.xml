@@ -1,0 +1,19 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <proxies>
+    <proxy>
+      <id>hclproxy</id>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>nsez-s500</host>
+      <port>8080</port>
+      <username>hcltech\rahul-shar</username>
+      <password>Veena@25</password>
+      <nonProxyHosts></nonProxyHosts>
+    </proxy>
+  </proxies>
+  ...
+</settings>

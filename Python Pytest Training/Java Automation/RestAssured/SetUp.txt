@@ -1,0 +1,8 @@
+: Installation Setup Required-
+
+-Java should be installed
+-Configure JAVA_HOME & PATH in system variables
+-For Java_HOme -copy path till java folder & for oath -copoy till bin folder
+-Lastly download & setup all the RestAssured jars from restassured.io into eclipse for external libraries
+
+::SetUp is completed for Rest Assured

@@ -1,0 +1,23 @@
+:Array- A container which stores multiple values of same data type
+
+int a[]= new int[5];
+then assign the values--
+
+a[0]=1;
+and so on for the rest of the indexes amd the index starts from zero
+
+:Another way of initializing the arrays
+
+int b[]= {Assign the values};
+
+:Multi Dimensinal arrays- Matrix form
+
+2 3
+0 9
+1 8
+
+int a[][]= new int[3][3] {Now assign  the values as per row and column like o0,0--0,1 and so on}
+
+int a[][]={{2,3,5},{6,7,0}};
+
+

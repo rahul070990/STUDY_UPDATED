@@ -1,0 +1,15 @@
+:Commands
+
+-driver.get(url)
+-driver.getTitle()
+-driver.getText()
+-driver.navigate().to(url)
+-driver.navigate().back(),driver.navigate().forward(), driver.refresh(),driver.getcurrenturl(),driver.close(),driver.getPageSource(), driver.quit(),
+
+
+:XPATH (Child to Parent OR sibling from sibling)
+-child xpath/parent::parent_tagName
+-child xpath/following-sibling::sibling_tagName
+-//tag_Name(text()='')
+
+:CSS Selector (Same as XPath except // & @)

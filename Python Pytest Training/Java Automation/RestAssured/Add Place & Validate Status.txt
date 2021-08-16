@@ -1,0 +1,32 @@
+:Basics-
+
+-RestAssured works basically with Given, When, Then- Everything needs to be into this
+-You can add your baseurl as RestAssured.baseURI='YOUR_URL'
+-given() [add .* for restassured to eliminate this error]- All inputs will be part of given
+
+-So everything can be chainned in given method: 
+given().log().all().queryParam("key","value").headers().body() --- everything like this and in continuation with this add 'when' as .when().post('path after url').then().log().all().assertThat().statusCode(200)
+
+:Now if you want to assert on response body then you can chain in then only with .
+.body("key",equalTo"value")[need to import static method to remove the error for packages as it is static so it will not show auto suggestion]
+.header('key','value')
+
+
+-How to store the response in variable?
+:You can chain it in then() using .extract().response().asString() and store it in a string variable
+:Then using JsonPath class you can pass the stored string variable response
+JsonPath js= new JsonPath(stored response variable)
+String s= js.getString('whatever to validate')
+:Then assert using comparison and the task is done
+:So TestNG can be implemented for proper assertion
+
+-JSON playaround for validations?
+
+:Basic logic remains the same as how to store the response first and then using either .get or .getInt("node/node.child(basically the key that you would like to store & validate)")
+:Above step is useful when there is simple/direct node/child to be validated but suppose if you want to validate the dynamic one then you need to iterate using for loop & you can do it like if you want to validate something inside an array/dynamic then you have to do like this.
+
+:js(response reference).get/getint("node["+i+"].child); {Concatenation will help changing the i value}
+
+
+
+

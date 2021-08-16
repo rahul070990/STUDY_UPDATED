@@ -1,0 +1,14 @@
+Architecture:
+
+1. Selenium Client-- code is converted into JSON whenever you trigger the test.
+2. Browser Driver-- This JSON reaches the browser driver & respective browser communicates with respective Browser Driver through http
+3. Browser-- Browser sends the response back to browser driver & finally returns the result back to Selenium Client
+
+
+:Configuration
+-Copy the downloaded jdk home path & go to system variable & add a new variable as 'JAVA_HOME' & paste it
+-Also copy the path till bin folder & copy it. Go to system variable>Edit the path & add the path
+-Environment setup is done
+-check java -version on your cmd , You will see the version & hence the java is installed
+
+-Download integrated development environment (IDE- Eclipse) from browser as per the windows settings & just config it

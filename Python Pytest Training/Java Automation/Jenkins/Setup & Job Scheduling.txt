@@ -1,0 +1,34 @@
+:Setup
+
+-Download jenkins jar from online as per your windows (.war file)
+-Go to cmd where the file is downaloaded
+-Open cmd & say- 'java -jar jenkins.war -httpPort='8080' if other than 8080 as it will run automatically on 8080
+-Open Browser> Go to localhost:8080> Login with the default username & password (i guess it is present somewhere in the file when you fiorst download jenkins>Download basic plugins & it should log you in the application
+
+
+-You need Maven & Java to be setup in Jenkins as tehy will be required to run the code- All the jars need not be installed as pom.xml will take care of that
+
+:Create Job/ Global tool configurations
+-Create manage jenkins
+-Global tool configuration
+-click jdk installation> provide the jdk path which is set in system variable
+-Scroll & click maven installation & provide the maven path just like java
+
+-Create Job
+-Click new item
+-Select freestyle project
+-Ideal on github so you can give repo url in source code management/code in local machine (Click advance>custom workspace> copy maven project location & paste in jenkins folderin machine) & use custom workspace: ${Jenkins_HOme}/Mavenjava
+-Build Trigger- provide when you want to trigger the job with like hh/mm and all
+-Build>> Select version & provide the maven command to execute 'test -Pregression (you can remove mvn as well as you are into mvn only)
+-Click save & click build now and it will start to run
+
+
+:Reports
+-Manage jenkins
+-manage plugins
+-install testng result plugin
+-click configure if you want to change the existing settings
+-post build action >select publish testng results
+
+
+-Build trigger>Build periodically>
